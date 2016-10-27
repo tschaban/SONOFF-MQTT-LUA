@@ -1,1 +1,1 @@
-# sonoff-with-mqtt
+# Sonoff switch controlled by MQTT
