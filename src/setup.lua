@@ -11,10 +11,9 @@ local function getIP()
     else
         tmr.stop(1)
         print("\n====================================")
-        print("ESP8266 mode is: " .. wifi.getmode())
+        print("ID: " .. config.ID)
         print("MAC address is: " .. wifi.ap.getmac())
         print("IP is " .. wifi.sta.getip())
-        print("====================================")
         app.start()
     end
 end

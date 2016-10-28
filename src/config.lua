@@ -8,12 +8,13 @@ local module = {}
 module.ID = node.chipid()
 
 module.WIFI_SSID = "SSID"
-module.WIFI_PASSWORD = "12345679ABCDEF"
+module.WIFI_PASSWORD = "password"
 
-module.MQTT_HOST = "mqtt.host.com"
-module.MQTT_PORT = 1884
+module.MQTT_HOST = "mqtt.example.com"
+module.MQTT_PORT = 1883
 module.MQTT_USER = "user"
 module.MQTT_PASSWORD = "password"
+module.MQTT_TOPIC = "/sonoff/switch/"
 
 
 -- GPIO Configuration
