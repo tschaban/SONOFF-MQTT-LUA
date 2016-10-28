@@ -16,7 +16,6 @@ module.MQTT_USER = "user"
 module.MQTT_PASSWORD = "password"
 module.MQTT_TOPIC = "/sonoff/switch/"
 
-
 -- GPIO Configuration
 module.BUTTON = 3
 module.RELAY = 6
