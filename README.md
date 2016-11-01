@@ -10,7 +10,10 @@
 
 | Topic  | Inbound / Outbound | Message | Description |
 |---|---|---|---|---| 
-| /sonoff/switch/ID/cmd | Inbound | turnON, turnOFF, reportStatus |  Sonoff switch should be subscribed to this topic. This topic controls the switch. * turnON - set relay to ON, * turnOFF - set relay to OFF, * reportStatus - triggers publishing relay current state | 
+| /sonoff/switch/ID/cmd | Inbound | turnON, turnOFF, reportStatus |  Sonoff switch should be subscribed to this topic. This topic controls the switch. 
+* turnON - set relay to ON, 
+* turnOFF - set relay to OFF, 
+* reportStatus - triggers publishing relay current state | 
 | /sonoff/switch/ID/state | Outbound | ON, OFF | Sonoff switch publishes to this topic all changes of the relay |
 | /sonoff/switch/ID/get | Outbound | defaultState | Sonoff switch sends this message to the broker while booting in order to get default value of the relay. If it's not implemented in the MQTT broker then default relay state is set: off | 
 
