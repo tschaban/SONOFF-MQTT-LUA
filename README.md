@@ -15,11 +15,11 @@
 | /sonoff/switch/*ID*/get | Outbound | defaultState | Sonoff switch sends this message to the broker while booting in order to get default value of the relay. If it's not implemented in the MQTT broker then default relay state is set: off | 
 
 where 
-*  ID is a value of particular switch ChipID - it could be set manually to whatever value in the config.lua file
+*  _ID_ is a value of particular switch ChipID - it could be set manually to whatever value in the _config.lua_ file
 
 
 ### Configuration
-Configuration should be made in config.lua file
+Configuration should be made in _config.lua_ file
 
 | Parameter  | Description |
 |---|---|
@@ -43,7 +43,7 @@ Following files have to be compiled on ESP8266
 * setup.lua
 * app.lua
 
-Below code does it and in addition removed lua files afterwards - they are no longer required after they are compiled
+Below code does it and in addition removes lua files afterwards - they are no longer required after they are compiled
 ``` 
 node.compile("config.lua")
 node.compile("setup.lua")
@@ -53,6 +53,6 @@ file.remove("setup.lua")
 file.remove("app.lua")
 ```
 
-init.lua should be uploaded to Sonoff as is - without compilation
+_init.lua_ should be uploaded to Sonoff as is - without compilation
 
 **You can find description in Polish at my site** [SmartHouse](http://smart-house.adrian.czabanowski.com/sonoff-openhab-mqtt-zrob-to-sam/)
