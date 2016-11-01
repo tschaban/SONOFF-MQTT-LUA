@@ -7,10 +7,10 @@ local module = {}
 
 local function getIP()
     if wifi.sta.getip() == nil then
-        print("IP unavailable, Waiting...")
+        print("\nWaiting for IP...")
     else
         tmr.stop(1)
-        print("\n====================================")
+        print("\n====================================+")
         print("ID: " .. config.ID)
         print("MAC address is: " .. wifi.ap.getmac())
         print("IP is " .. wifi.sta.getip())
@@ -23,12 +23,11 @@ local function connect()
     wifi.sta.config(config.WIFI_SSID, config.WIFI_PASSWORD)
     wifi.sta.connect()
     print("Connecting to " .. config.WIFI_SSID .. " ...")
-    --config.SSID = nil  -- can save memory
     tmr.alarm(1, 2500, 1, getIP)
 end
 
 function module.start()
-    print("Configuring Wifi ...")
+    print("\nConfiguring Wifi ...")
     wifi.setmode(wifi.STATION);
     wifi.sta.getap(connect)
 end
