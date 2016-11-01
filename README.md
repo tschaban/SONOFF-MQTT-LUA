@@ -54,3 +54,5 @@ file.remove("app.lua")
 ```
 
 init.lua should be uploaded to Sonoff as is - without compilation
+
+**You can find description in Polish at my site** [SmartHouse](http://smart-house.adrian.czabanowski.com/sonoff-openhab-mqtt-zrob-to-sam/)
