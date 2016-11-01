@@ -23,7 +23,7 @@ Configuration should be made in _config.lua_ file
 
 | Parameter  | Description |
 |---|---|
-| ID | Device ID, use either numbers or chars no space or special characters, default is ChipID |
+| ID | Device ID. It's used in the MQTT Topic to distinguish other Sonoffs in MQTT Broker. You can change it. Use either numbers or chars. Don't use space or special characters, default is ChipID |
 | WIFI_SSID  | WiFi network name |
 | WIFI_PASSWORD   | WiFi network password |
 | MQTT_HOST  | MQTT Broker IP or host name |
