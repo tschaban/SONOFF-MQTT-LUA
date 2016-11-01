@@ -1,23 +1,24 @@
-**Sonoff switch controlled by MQTT messages**
+# Sonoff switch controlled by MQTT messages
 
-**Requirements: **
-- Sonoff switch (with ESP8266 chip)
-- Sonoff flashed with ESP8266 Flasher https://github.com/nodemcu/nodemcu-flasher or other with LUA language on board
-- MQTT Broker
+### Requirements:
 
-**MQTT Topics**
+* Sonoff switch (with ESP8266 chip)
+* Sonoff flashed with ESP8266 Flasher https://github.com/nodemcu/nodemcu-flasher or other with LUA language on board
+* MQTT Broker
+
+### MQTT Topics
 
 | Topic  | Inbound / Outbound | Message | Description |
 |---|---|---|---|---| 
-| /sonoff/switch/ID/cmd | Inbound | turnON, turnOFF, reportStatus |  Sonoff switch should be subscribed to this topic. This topic controls the switch. | 
+| /sonoff/switch/ID/cmd | Inbound | turnON, turnOFF, reportStatus |  Sonoff switch should be subscribed to this topic. This topic controls the switch. * turnON - set relay to ON, * turnOFF - set relay to OFF, * reportStatus - triggers publishing relay current state | 
 | /sonoff/switch/ID/state | Outbound | ON, OFF | Sonoff switch publishes to this topic all changes of the relay |
 | /sonoff/switch/ID/get | Outbound | defaultState | Sonoff switch sends this message to the broker while booting in order to get default value of the relay. If it's not implemented in the MQTT broker then default relay state is set: off | 
 
 where 
-- ID is a value of particular switch ChipID - it could be set manually to whatever value in the config.lua file
+*  ID is a value of particular switch ChipID - it could be set manually to whatever value in the config.lua file
 
 
-**Configuration**
+### Configuration
 Configuration should be made in config.lua file
 
 | Parameter  | Description |
@@ -33,11 +34,23 @@ Configuration should be made in config.lua file
 | BUTTON   | GPIO Pin number of the button in Sonoff switch |
 | RELAY   | GPIO Pin number of the relay in Sonoff switch |
 | LED   | GPIO Pin number of the led indicator in Sonoff switch |
-|
 
-**Installation**
+
+### Installation
 
 Following files have to be compiled on ESP8266
-- config.lua
-- setup.lua
-- app.lua
+* config.lua
+* setup.lua
+* app.lua
+
+Below code does it and in addition removed lua files afterwards - they are no longer required after they are compiled
+``` 
+node.compile("config.lua")
+node.compile("setup.lua")
+node.compile("app.lua")
+file.remove("config.lua")
+file.remove("setup.lua")
+file.remove("app.lua")
+```
+
+init.lua should be uploaded to Sonoff as is - without compilation
