@@ -37,9 +37,9 @@ Configuration should be made in _config.lua_ file
 | MQTT_USER  | MQTT User name, leave blank if there is no user authentication at your MQTT broker |
 | MQTT_PASSWORD  | MQTT User name, leave blank if there is no user authentication at your MQTT broker |
 | MQTT_TOPIC  | MQTT topic, defualt /sonoff/switch/ |
-| BUTTON   | GPIO Pin number of the button in Sonoff switch |
-| RELAY   | GPIO Pin number of the relay in Sonoff switch |
-| LED   | GPIO Pin number of the led indicator in Sonoff switch |
+| BUTTON   | GPIO Pin number of the button in Sonoff switch, default 3 |
+| RELAY   | GPIO Pin number of the relay in Sonoff switch, default 6 |
+| LED   | GPIO Pin number of the led indicator in Sonoff switch, default 7 |
 
 
 ### Installation
